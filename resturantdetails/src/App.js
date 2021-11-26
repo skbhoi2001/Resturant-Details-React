@@ -11,10 +11,10 @@ import ResturantDetails from './Components/ResturantDetails/ResturantDetails';
 function App() {
     return(
       <div className="App">
-      {/* <Resturant/> */}
+      <Resturant/>
+      {/* <Amazon date="28/10/2020" headOne="Amazon Gift" headTwo="Pay" useWhere="Desktop-Mobile" />
       <Amazon date="28/10/2020" headOne="Amazon Gift" headTwo="Pay"  useWhere="Desktop-Mobile" />
-      <Amazon date="28/10/2020" headOne="Amazon Gift" headTwo="Pay"  useWhere="Desktop-Mobile" />
-      <Amazon date="17 Sep 2020" headOne="Amazon Gift" headTwo="Payment"  useWhere="MacOS-Mobile" />
+      <Amazon date="17 Sep 2020" headOne="Amazon Gift" headTwo="Payment"  useWhere="MacOS-Mobile" /> */}
     </div>
   );
 }
