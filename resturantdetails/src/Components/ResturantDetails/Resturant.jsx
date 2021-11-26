@@ -9,14 +9,20 @@ function Resturant(){
     const [payment,setPayment]=useState({
         paymentMethod:"All"
     })
+    const [cost, setCost]=useState({
+        sortMethod: null
+    })
     const handleRating=(rating)=>{
         setState({filterRating: rating});
       }
     const handlePayment=(method)=>{
         setPayment({paymentMethod:method})
     }  
+    const handleSort=(order)=>{
+        setCost({sortMethod: order})
+      }
       const {filterRating} = state
-      const {paymentMethod}=payment
+      //const {paymentMethod}=payment
     return(
         <div>
             <h1>RESTAURANT WEBSITE</h1>
@@ -28,6 +34,15 @@ function Resturant(){
                 }
                 
             </div>
+            <div style={{color: "gray",fontSize: "20px", fontWeight: "500"}}>
+        Cost:
+        {
+           ["Low To High","High To Low","unsorted"].map(order=> {
+             return <button key={order} onClick={() =>handleSort(order)}>
+                {order}
+              </button>
+            })
+        }
             <div>
                 Payment Metords 
                { 
@@ -51,10 +66,20 @@ function Resturant(){
                     }
                     return payCond
                 })
+                .sort((a, b) =>{
+                    if (cost.sortMethod === "Low To High") {
+                      return a.costForTwo - b.costForTwo;
+                    }
+                    if (cost.sortMethod === "High To Low") {
+                      return b.costForTwo - a.costForTwo;
+                    }
+                    return 0;
+                  })
                 .map((item)=>{
                     return <ResturantDetails data={item} key={item.id}/>
                 })
             }
+            </div>
             </div>
         </div>
     )
