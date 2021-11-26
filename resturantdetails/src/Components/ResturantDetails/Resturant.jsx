@@ -2,6 +2,7 @@ import react from "react";
 import data from "../assets/data.json";
 import ResturantDetails from "./ResturantDetails";
 import { useState } from 'react';
+import Pagination from "./Pagination";
 function Resturant(){
     const [state, setState]=useState({
         filterRating: 0,
@@ -12,6 +13,7 @@ function Resturant(){
     const [cost, setCost]=useState({
         sortMethod: null
     })
+    const [page,setPage]=useState(1)
     const handleRating=(rating)=>{
         setState({filterRating: rating});
       }
@@ -20,6 +22,10 @@ function Resturant(){
     }  
     const handleSort=(order)=>{
         setCost({sortMethod: order})
+      }
+
+      const changePage = (num)=>{
+          setPage(num)
       }
       const {filterRating} = state
       //const {paymentMethod}=payment
@@ -50,6 +56,9 @@ function Resturant(){
                     return <button key={method} onClick={()=>handlePayment(method)}>{method}</button>
                 })
                 }
+            </div>
+            <div>
+                <Pagination  />
             </div>
             <div>
                 Details:{
