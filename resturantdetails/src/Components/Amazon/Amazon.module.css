@@ -1,0 +1,32 @@
+.WidthElement{
+    width: 600px;
+    margin: 10px auto 10px auto;
+
+}
+
+.DispDat{
+    display: flex; 
+    padding: 20px;
+}
+.DispDat>p{
+    margin-right: 350px;
+}
+.DispDat>img{
+    width: 80px;
+}
+.DispCont{
+    text-align: left;
+    padding: 20px;
+}
+.DispEnd{
+    display: flex;
+    padding: 20px;
+}
+.DispEnd>p:nth-child(1){
+    margin-right: 350px;
+    font-size: 25px;
+    font-weight: 700;
+}
+.DispEnd>p:nth-child(2){
+    font-weight: 900;
+}

@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+.App>div:nth-child(1),.App>div:nth-child(2){
+  background-color: yellow;
+}
+.App>div:nth-child(3){
+  background-color: rgb(194, 184, 184);
+}

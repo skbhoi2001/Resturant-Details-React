@@ -3,6 +3,7 @@ import data from "../assets/data.json";
 import ResturantDetails from "./ResturantDetails";
 import { useState } from 'react';
 import Pagination from "./Pagination";
+import Style from "./Resturan.module.css"
 function Resturant(){
     const [state, setState]=useState({
         filterRating: 0,
@@ -85,7 +86,7 @@ function Resturant(){
                     return 0;
                   })
                 .map((item)=>{
-                    return <ResturantDetails data={item} key={item.id}/>
+                    return <ResturantDetails className={Style.DisplayDataOne} data={item} key={item.id}/>
                 })
             }
             </div>
